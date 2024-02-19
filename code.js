@@ -49,10 +49,13 @@ for (let i = 0; i < pricingCards.length; i++) {
   const priceEl = pricingCard.querySelector(".c-pricing-tier__price-number");
   const requiredDevicesText = pricingCard.querySelector(".c-pricing-tier__required");
   const pricingType = pricingCard.getAttribute("data-pricing-type");
+  const detailPrices = pricingCard.querySelectorAll('.pricing-table-price');
+  console.log(detailPrices);
   pricingOutputs[pricingType] = {
 	priceEl: priceEl,
 	pricingCard: pricingCard,
-	requiredDevicesText: requiredDevicesText
+	requiredDevicesText: requiredDevicesText,
+	detailPrices: detailPrices
   };
 }
 
@@ -71,13 +74,7 @@ setTimeout(function() {
 }, 10);
 
 function handlePricingSlide(input, pricingOutputs) {
-  let hardwareType = "smartKitEasy";
-  for (let i = 0; i < input.hardwareInputs.length; ++i) {
-	if (input.hardwareInputs[i].checked) {
-	  hardwareType = input.hardwareInputs[i].value;
-	}
-  }
-	
+  	
   const numberOfDevices = input.el.value;
   input.spanEl.innerHTML = numberOfDevices;
   
@@ -88,13 +85,27 @@ function handlePricingSlide(input, pricingOutputs) {
   input.spanEl.style.left =
     input.el.clientWidth * multiplier - thumbOffset + priceInputOffset + "px";
 	
-  const businessPrices = computeBusinessPrice(numberOfDevices, hardwareType);
-  pricingOutputs.business.priceEl.innerHTML = businessPrices.pricePerDevice;
-  const valuePrices = computeValuePrice(numberOfDevices, hardwareType);
-  pricingOutputs.value.priceEl.innerHTML = valuePrices.pricePerDevice;
+  const mainBusinessPrices = computeBusinessPrice(numberOfDevices, "technology");
+  pricingOutputs.business.priceEl.innerHTML = mainBusinessPrices.pricePerDevice;
+  const mainValuePrices = computeValuePrice(numberOfDevices, "technology");
+  pricingOutputs.value.priceEl.innerHTML = mainValuePrices.pricePerDevice;
+  
+  for (let i = 0; i < pricingOutputs.business.detailPrices.length; ++i) {
+	const detailPriceEl =  pricingOutputs.business.detailPrices[i];
+	const hardwareType = detailPriceEl.getAttribute('data-hardware-type');
+	const price = computeBusinessPrice(numberOfDevices, hardwareType).pricePerDevice;
+	detailPriceEl.innerHTML = price + "€";
+  }
+  for (let i = 0; i < pricingOutputs.value.detailPrices.length; ++i) {
+	const detailPriceEl =  pricingOutputs.value.detailPrices[i];
+	const hardwareType = detailPriceEl.getAttribute('data-hardware-type');
+	const price = computeValuePrice(numberOfDevices, hardwareType).pricePerDevice;
+	detailPriceEl.innerHTML = price + "€";
+  }
+  
   if (numberOfDevices > valueMaxNumberOfDevices) {
 	pricingOutputs.value.pricingCard.classList.add("is-disabled");
-	pricingOutputs.value.requiredDevicesText.innerHTML = "Bis zu " + valueMaxNumberOfDevices + " Devices";
+	pricingOutputs.value.requiredDevicesText.innerHTML = "BIS ZU " + valueMaxNumberOfDevices + " DEVICES";
   } else {
 	pricingOutputs.value.pricingCard.classList.remove("is-disabled");
 	pricingOutputs.value.requiredDevicesText.innerHTML = "";

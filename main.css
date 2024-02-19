@@ -535,11 +535,11 @@ body {
   --token-h5-font-weight:700;
   --token-h5-font-size:0.75rem;
   --token-h5-line-height:1.125rem;
-  --token-h6-font-family:var(--token-font-family-primary);
+  --token-h6-font-family:Bw Gradual;
   --token-h6-font-weight:700;
   --token-h6-font-size:1.25rem;
   --token-h6-line-height:1.1;
-  --token-h7-font-family:var(--token-font-family-primary);
+  --token-h7-font-family:Bw Gradual;
   --token-h7-font-weight:700;
   --token-h7-font-size:1.125rem;
   --token-h7-line-height:1.1;
@@ -8232,3 +8232,58 @@ a:hover {
   box-shadow: 0 0 10px var(--token-color-primary);
 }
 
+.pricing-table-container {
+  display: grid;
+  column-gap: 14px;
+  row-gap: 12px;
+  grid-template-areas:
+    'price1 text1'
+	'price2 text2'
+	'price3 text3'
+	'price4 text4'
+	'price5 text5';
+  margin: 0px 0px ;
+}
+
+.pricing-table-price {
+  color: var(--token-color-primary);
+  grid-area: price;
+  font-family:"Bw Gradual";
+  min-width: 60px;
+  text-align: right;
+}
+
+.pricing-table-price-1 {
+  grid-area: price1
+}
+.pricing-table-price-2 {
+  grid-area: price2
+}
+.pricing-table-price-3 {
+  grid-area: price3
+}
+.pricing-table-price-4 {
+  grid-area: price4
+}
+.pricing-table-price-5 {
+  grid-area: price5
+}
+.pricing-table-text {
+	
+}
+
+.pricing-table-text-1 {
+  grid-area: text1
+}
+.pricing-table-text-2 {
+  grid-area: text2
+}
+.pricing-table-text-3 {
+  grid-area: text3
+}
+.pricing-table-text-4 {
+  grid-area: text4
+}
+.pricing-table-text-5 {
+  grid-area: text5
+}
