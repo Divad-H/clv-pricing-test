@@ -6,7 +6,8 @@
     <meta name="viewport" content="minimum-scale=1.0, width=device-width">
     <link rel="icon" type="image/svg+xml" href="./assets/favicon.svg">
     <link rel="icon" type="image/png" href="./assets/favicon.ico">
-    <script type="text/javascript" charset="UTF-8" async="" src="code.js"></script>
+    <script type="text/javascript" charset="UTF-8" async="" src="configuration.js"></script>
+    <script type="text/javascript" charset="UTF-8" async="" src="main.js"></script>
     <script>
       document.documentElement.classList.remove('no-js');
     </script>
@@ -14,24 +15,68 @@
     <title>Pricing | Clouver</title>
   </head>
   <body class=" js-body" style="">
+    <div class="o-container-large">
+	  <h4 class="u-mt-3 u-text-center">
+        WIE VIELE DEVICES MÖCHTEN SIE ANBINDEN?
+      </h4>
+	</div>
     <div class="o-container-small">
       <div class="u-mt-3">
         <div class="u-typo-large-bold u-text-center">
-          Wie viele Devices möchten Sie anbinden?
+          SmartKit easy (Core + 3 Power Clamps)
         </div>
-        <div class="c-range js-range u-mt-1" style="--component-slider-thumb-width: 69px;">
-          <label class="u-visually-hidden" for="range">range</label>
-          <span class="c-range__value" style="transform: translateX(0px);">4</span>
-          <input class="c-range__input" type="range" id="range" name="range" min="1" max="250" value="4" step="1">
+        <div class="c-range js-range u-mt-1" style="--component-slider-thumb-width: 69px;" data-slider-hardware="smartKitEasy">
+          <span class="c-range__value">4</span>
+          <input class="c-range__input" type="range" id="range" name="range" min="0" max="250" value="4" step="1">
           <div class="c-range__progress-bar" style="background: linear-gradient(to right, var(--token-color-primary), var(--token-color-primary) 0%, var(--token-color-neutral-0) 0%, var(--token-color-neutral-0) 100%);"></div>
         </div>
-        <div class="c-loader js-loader o-flex o-jc-center u-mt-3 is-hidden ">
-          <div class="c-loader__container">
-            <span class="c-loader__square"></span>
-            <span class="c-loader__square"></span>
-            <span class="c-loader__square"></span>
-            <span class="c-loader__square"></span>
-          </div>
+      </div>
+    </div>
+    <div class="o-container-small">
+      <div class="u-mt-3">
+        <div class="u-typo-large-bold u-text-center">
+          SmartKit flex (Core + AIO, without Sensors)
+        </div>
+        <div class="c-range js-range u-mt-1" style="--component-slider-thumb-width: 69px;" data-slider-hardware="smartKitFlex">
+          <span class="c-range__value">0</span>
+          <input class="c-range__input" type="range" id="range" name="range" min="0" max="250" value="0" step="1">
+          <div class="c-range__progress-bar" style="background: linear-gradient(to right, var(--token-color-primary), var(--token-color-primary) 0%, var(--token-color-neutral-0) 0%, var(--token-color-neutral-0) 100%);"></div>
+        </div>
+      </div>
+    </div>
+    <div class="o-container-small">
+      <div class="u-mt-3">
+        <div class="u-typo-large-bold u-text-center">
+          Downtime Analytics 10" (inkl. SmartKit easy)
+        </div>
+        <div class="c-range js-range u-mt-1" style="--component-slider-thumb-width: 69px;" data-slider-hardware="downtimeAnalytics">
+          <span class="c-range__value">0</span>
+          <input class="c-range__input" type="range" id="range" name="range" min="0" max="250" value="0" step="1">
+          <div class="c-range__progress-bar" style="background: linear-gradient(to right, var(--token-color-primary), var(--token-color-primary) 0%, var(--token-color-neutral-0) 0%, var(--token-color-neutral-0) 100%);"></div>
+        </div>
+      </div>
+    </div>
+    <div class="o-container-small">
+      <div class="u-mt-3">
+        <div class="u-typo-large-bold u-text-center">
+          Paperless Lizenz (inkl. Downtime Analytics 10" und SmartKit easy)
+        </div>
+        <div class="c-range js-range u-mt-1" style="--component-slider-thumb-width: 69px;" data-slider-hardware="paperless">
+          <span class="c-range__value">0</span>
+          <input class="c-range__input" type="range" id="range" name="range" min="0" max="250" value="0" step="1">
+          <div class="c-range__progress-bar" style="background: linear-gradient(to right, var(--token-color-primary), var(--token-color-primary) 0%, var(--token-color-neutral-0) 0%, var(--token-color-neutral-0) 100%);"></div>
+        </div>
+      </div>
+    </div>
+    <div class="o-container-small">
+      <div class="u-mt-3">
+        <div class="u-typo-large-bold u-text-center">
+          Technologie
+        </div>
+        <div class="c-range js-range u-mt-1" style="--component-slider-thumb-width: 69px;" data-slider-hardware="technology">
+          <span class="c-range__value">0</span>
+          <input class="c-range__input" type="range" id="range" name="range" min="0" max="250" value="0" step="1">
+          <div class="c-range__progress-bar" style="background: linear-gradient(to right, var(--token-color-primary), var(--token-color-primary) 0%, var(--token-color-neutral-0) 0%, var(--token-color-neutral-0) 100%);"></div>
         </div>
       </div>
     </div>
@@ -42,13 +87,13 @@
             <div class="c-pricing-tier__header">
               <div class="c-pricing-tier__price-detail">
                 <span class="c-pricing-tier__price-period">
-                Ab
+                Durchschnittlich
                 </span>
               </div>
               <div class="c-pricing-tier__price">
                 <span class="c-pricing-tier__price-number">177</span>€
               </div>
-              <div class="c-pricing-tier__required">BIS ZU 4 DEVICES</div>
+              <div class="c-pricing-tier__required">Bis zu 4 Devices</div>
               <div class="c-pricing-tier__price-detail">
                 <span class="c-pricing-tier__price-period">
                 Pro Monat und Device
@@ -64,6 +109,12 @@
                 <p></p>
                 <p>Einstieg in die digitalisierte Produktion mit bis zu <strong>4 Devices</strong></p>
                 <p></p>
+              </div>
+              <div class="c-pricing-tier__price-detail">
+                <h6 class="c-pricing-tier__totalprice">615€</h6>
+                <span class="c-pricing-tier__price-period">
+                Pro Monat
+                </span>
               </div>
               <ul class="c-checklist c-pricing-tier__checklist u-stack-1">
                 <li class="c-checklist__item">
@@ -114,52 +165,6 @@
                     Maschinen-Dashboard
                   </div>
                 </li>
-			  </ul>
-				
-              <div class="s-wysiwyg">
-                <h6 style="margin-top: 40px">MONATLICHE MIETPREISE PRO DEVICE</h6>
-			  </div>
-				
-              <ul class="c-checklist c-pricing-tier__checklist u-stack-1">
-
-                <li class="c-checklist__item">
-                  <div class="pricing-table-container">
-                    <span class="pricing-table-price pricing-table-price-1" data-hardware-type="smartKitEasy">
-                      123€
-                    </span>
-                    <div class="pricing-table-text pricing-table-text-1">
-                      SmartKit easy (Core + 3 Power Clamps)
-                    </div>
-					
-                    <span class="pricing-table-price pricing-table-price-2" data-hardware-type="smartKitFlex">
-                      123€
-                    </span>
-                    <div class="pricing-table-text pricing-table-text-2">
-                      SmartKit flex (Core + AIO, without Sensors)
-                    </div>
-					
-                    <span class="pricing-table-price pricing-table-price-3" data-hardware-type="downtimeAnalytics">
-                      123€
-                    </span>
-                    <div class="pricing-table-text pricing-table-text-3">
-                      Downtime Analytics 10" (inkl. SmartKit easy)
-                    </div>
-					
-                    <span class="pricing-table-price pricing-table-price-4" data-hardware-type="paperless">
-                      123€
-                    </span>
-                    <div class="pricing-table-text pricing-table-text-4">
-                      Paperless Lizenz (inkl. Downtime Analytics 10" und SmartKit easy)
-                    </div>
-					
-                    <span class="pricing-table-price pricing-table-price-5" data-hardware-type="technology">
-                      123€
-                    </span>
-                    <div class="pricing-table-text pricing-table-text-5">
-                      Technologie
-                    </div>
-                  </div>
-                </li>
               </ul>
             </div>
           </div>
@@ -172,7 +177,7 @@
             <div class="c-pricing-tier__header">
               <div class="c-pricing-tier__price-detail">
                 <span class="c-pricing-tier__price-period">
-                Ab
+                Durchschnittlich
                 </span>
               </div>
               <div class="c-pricing-tier__price">
@@ -194,6 +199,12 @@
                 <p></p>
                 <p>Monitoring von Produktionslinien für effektives <strong>Engpassmanagement</strong></p>
                 <p></p>
+              </div>
+              <div class="c-pricing-tier__price-detail">
+                <h6 class="c-pricing-tier__totalprice">615€</h6>
+                <span class="c-pricing-tier__price-period">
+                Pro Monat
+                </span>
               </div>
               <ul class="c-checklist c-pricing-tier__checklist u-stack-1">
                 <li class="c-checklist__item">
@@ -329,51 +340,6 @@
                   </div>
                   <div class="c-checklist__item-text s-wysiwyg">
                     Maschinenverwaltung
-                  </div>
-                </li>
-              </ul>
-				
-              <div class="s-wysiwyg">
-                <h6 style="margin-top: 40px">MONATLICHE MIETPREISE PRO DEVICE</h6>
-			  </div>
-				
-              <ul class="c-checklist c-pricing-tier__checklist u-stack-1">
-                <li class="c-checklist__item">
-                  <div class="pricing-table-container">
-                    <span class="pricing-table-price pricing-table-price-1" data-hardware-type="smartKitEasy">
-                      123€
-                    </span>
-                    <div class="pricing-table-text pricing-table-text-1">
-                      SmartKit easy (Core + 3 Power Clamps)
-                    </div>
-					
-                    <span class="pricing-table-price pricing-table-price-2" data-hardware-type="smartKitFlex">
-                      123€
-                    </span>
-                    <div class="pricing-table-text pricing-table-text-2">
-                      SmartKit flex (Core + AIO, without Sensors)
-                    </div>
-					
-                    <span class="pricing-table-price pricing-table-price-3" data-hardware-type="downtimeAnalytics">
-                      123€
-                    </span>
-                    <div class="pricing-table-text pricing-table-text-3">
-                      Downtime Analytics 10" (inkl. SmartKit easy)
-                    </div>
-					
-                    <span class="pricing-table-price pricing-table-price-4" data-hardware-type="paperless">
-                      123€
-                    </span>
-                    <div class="pricing-table-text pricing-table-text-4">
-                      Paperless Lizenz (inkl. Downtime Analytics 10" und SmartKit easy)
-                    </div>
-					
-                    <span class="pricing-table-price pricing-table-price-5" data-hardware-type="technology">
-                      123€
-                    </span>
-                    <div class="pricing-table-text pricing-table-text-5">
-                      Technologie
-                    </div>
                   </div>
                 </li>
               </ul>
