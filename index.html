@@ -71,7 +71,7 @@
     <div class="o-container-small">
       <div class="u-mt-3">
         <div class="u-typo-large-bold u-text-center">
-          Technologie
+          Connect Your Own Machine
         </div>
         <div class="c-range js-range u-mt-1" style="--component-slider-thumb-width: 69px;" data-slider-hardware="technology">
           <span class="c-range__value">0</span>
@@ -80,6 +80,20 @@
         </div>
       </div>
     </div>
+	
+    <div class="o-container-small">
+      <div class="u-mt-3 radio-buttons-container">
+        <div class="radio-button u-typo-large-bold">
+          <input class="c-billing-input radio-button__input" type="radio" id="yearly-billing" name="billing" value="yearlyPayment" checked>
+          <label class="radio-button__label" for="yearly-billing"><span class="radio-button__custom"></span>Jährliche Abrechnung</label>
+        </div>
+        <div class="radio-button u-typo-large-bold">
+          <input class="c-billing-input radio-button__input" type="radio" id="monthly-billing" name="billing" value="monthlyPayment">
+          <label class="radio-button__label" for="monthly-billing"><span class="radio-button__custom"></span>Monatliche Abrechnung</label>
+        </div>
+      </div>
+    </div>
+	
 	<div class="o-section u-py-0">
       <div class="o-container-large">
         <div class="o-grid o-cols-12 o-jc-center o-gap-3 js-pricing-plans u-mt-6">
@@ -98,7 +112,7 @@
                 <span class="c-pricing-tier__price-period">
                 Pro Monat und Device
                 </span>
-                <span class="c-pricing-tier__price-period">
+                <span class="c-pricing-tier__price-period c-yearly-billing">
                 Jährlich abgerechnet
                 </span>
               </div>
@@ -111,9 +125,15 @@
                 <p></p>
               </div>
               <div class="c-pricing-tier__price-detail">
-                <h6 class="c-pricing-tier__totalprice">615€</h6>
-                <span class="c-pricing-tier__price-period">
+                <h6 class="c-pricing-tier__totalprice c-pricing-monthly">615€</h6>
+                <span class="c-pricing-tier__price-period c-period-caption-total">
                 Pro Monat
+                </span>
+              </div>
+              <div class="c-pricing-tier__price-detail">
+                <h6 class="c-pricing-tier__totalprice c-pricing-yearly">615€</h6>
+                <span class="c-pricing-tier__price-period c-period-caption-total">
+                Pro Jahr
                 </span>
               </div>
               <ul class="c-checklist c-pricing-tier__checklist u-stack-1">
@@ -188,7 +208,7 @@
                 <span class="c-pricing-tier__price-period">
                 Pro Monat und Device
                 </span>
-                <span class="c-pricing-tier__price-period">
+                <span class="c-pricing-tier__price-period c-yearly-billing">
                 Jährlich abgerechnet
                 </span>
               </div>
@@ -201,9 +221,15 @@
                 <p></p>
               </div>
               <div class="c-pricing-tier__price-detail">
-                <h6 class="c-pricing-tier__totalprice">615€</h6>
-                <span class="c-pricing-tier__price-period">
+                <h6 class="c-pricing-tier__totalprice c-pricing-monthly">615€</h6>
+                <span class="c-pricing-tier__price-period c-period-caption-total">
                 Pro Monat
+                </span>
+              </div>
+              <div class="c-pricing-tier__price-detail">
+                <h6 class="c-pricing-tier__totalprice c-pricing-yearly">615€</h6>
+                <span class="c-pricing-tier__price-period c-period-caption-total">
+                Pro Jahr
                 </span>
               </div>
               <ul class="c-checklist c-pricing-tier__checklist u-stack-1">

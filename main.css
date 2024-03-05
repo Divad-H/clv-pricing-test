@@ -8182,6 +8182,8 @@ a:hover {
 }
 
 .radio-buttons-container {
+  display: flex;
+  justify-content: space-between;
 }
 
 .radio-button {
@@ -8202,7 +8204,7 @@ a:hover {
   padding-left: 30px;
   margin-bottom: 10px;
   position: relative;
-  font-size: 16px;
+  font-size: 20px;
   color: #fff;
   cursor: pointer;
   transition: all 0.3s cubic-bezier(0.23, 1, 0.320, 1);

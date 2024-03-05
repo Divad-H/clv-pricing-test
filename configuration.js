@@ -4,28 +4,55 @@ var maxNumberOfDevices = 50;
 // Value
 var valueMaxNumberOfDevices = 4;
 var valuePrices = {
-  smartKitEasy: 59,
-  smartKitFlex: 69,
-  downtimeAnalytics: 79,
-  paperless: 89,
-  technology: 9
+  monthlyPayment: {
+    smartKitEasy: 79,
+    smartKitFlex: 84,
+    downtimeAnalytics: 104,
+    paperless: 109,
+    technology: 49
+  },
+  yearlyPayment: {
+	smartKitEasy: 59,
+    smartKitFlex: 64,
+    downtimeAnalytics: 84,
+    paperless: 89,
+    technology: 29
+  }
 };
 
 // Business
 var businessPrices = {
-  firstDevice: {
-    smartKitEasy: 149,
-    smartKitFlex: 159,
-    downtimeAnalytics: 169,
-    paperless: 179,
-    technology: 99
+  monthlyPayment: {
+    firstDevice: {
+      smartKitEasy: 169,
+      smartKitFlex: 174,
+      downtimeAnalytics: 194,
+      paperless: 199,
+      technology: 109
+    },
+    maxDiscountedPrice: {
+      smartKitEasy: 139,
+      smartKitFlex: 144,
+      downtimeAnalytics: 164,
+      paperless: 169,
+      technology: 79
+    }
   },
-  maxDiscountedPrice: {
-    smartKitEasy: 119,
-    smartKitFlex: 129,
-    downtimeAnalytics: 139,
-    paperless: 149,
-    technology: 69
+  yearlyPayment: {
+    firstDevice: {
+      smartKitEasy: 149,
+      smartKitFlex: 154,
+      downtimeAnalytics: 174,
+      paperless: 179,
+      technology: 89
+    },
+    maxDiscountedPrice: {
+      smartKitEasy: 119,
+      smartKitFlex: 124,
+      downtimeAnalytics: 144,
+      paperless: 149,
+      technology: 59
+    }
   },
   minTotalNumberOfDevicesForMaxDiscount: 50
 }

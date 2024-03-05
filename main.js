@@ -23,36 +23,51 @@ for (let si = 0; si < pricingSliders.length; ++si) {
   
   pricingInput.el.setAttribute("max", maxNumberOfDevices);
   
-  const pricingCards = document.querySelectorAll(".c-pricing-tier");
-  pricingOutputs = {
-  }
-  for (let i = 0; i < pricingCards.length; i++) {
-    const pricingCard = pricingCards[i];
-    const priceEl = pricingCard.querySelector(".c-pricing-tier__price-number");
-    const requiredDevicesText = pricingCard.querySelector(".c-pricing-tier__required");
-    const pricingType = pricingCard.getAttribute("data-pricing-type");
-	const totalPriceEl = pricingCard.querySelector(".c-pricing-tier__totalprice");
-    pricingOutputs[pricingType] = {
-  	  priceEl: priceEl,
-  	  pricingCard: pricingCard,
-  	  requiredDevicesText: requiredDevicesText,
-	  totalPriceEl: totalPriceEl
-    };
-  }
 }
+const pricingCards = document.querySelectorAll(".c-pricing-tier");
+pricingOutputs = {
+}
+for (let i = 0; i < pricingCards.length; i++) {
+  const pricingCard = pricingCards[i];
+  const priceEl = pricingCard.querySelector(".c-pricing-tier__price-number");
+  const requiredDevicesText = pricingCard.querySelector(".c-pricing-tier__required");
+  const pricingType = pricingCard.getAttribute("data-pricing-type");
+  const totalPriceMonthlyEl = pricingCard.querySelector(".c-pricing-monthly");
+  const totalPriceYearlyEl = pricingCard.querySelector(".c-pricing-yearly");
+  const yearlyPaymentTextEl = pricingCard.querySelector(".c-yearly-billing");
+  pricingOutputs[pricingType] = {
+    priceEl: priceEl,
+    pricingCard: pricingCard,
+    requiredDevicesText: requiredDevicesText,
+    totalPriceMonthlyEl: totalPriceMonthlyEl,
+    totalPriceYearlyEl: totalPriceYearlyEl,
+    yearlyPaymentTextEl: yearlyPaymentTextEl
+  };
+}
+const billingPeriodInputs = document.querySelectorAll(".c-billing-input");
 
-handlePricingSlide(pricingInputs, pricingOutputs);
+handlePricingSlide(pricingInputs, pricingOutputs, billingPeriodInputs);
 window.addEventListener("input", function() {
-  handlePricingSlide(pricingInputs, pricingOutputs);
+  handlePricingSlide(pricingInputs, pricingOutputs, billingPeriodInputs);
 });
 window.onresize = function() {
-  handlePricingSlide(pricingInputs, pricingOutputs);
+  handlePricingSlide(pricingInputs, pricingOutputs, billingPeriodInputs);
 };
 setTimeout(function() {
-  handlePricingSlide(pricingInputs, pricingOutputs);
+  handlePricingSlide(pricingInputs, pricingOutputs, billingPeriodInputs);
 }, 10);
 
-function handlePricingSlide(inputs, pricingOutputs) {
+function handlePricingSlide(inputs, pricingOutputs, billingPeriodInputs) {
+  let isYearlyPayment = true;
+  for (let i = 0; i < billingPeriodInputs.length; ++i) {
+    if (billingPeriodInputs[i].checked) {
+      isYearlyPayment = billingPeriodInputs[i].value == 'yearlyPayment';
+	}
+  }
+  const billingPeriodText = isYearlyPayment ? 'Jährlich abgerechnet ' : 'Monatlich abgerechnet';
+  pricingOutputs.business.yearlyPaymentTextEl.innerHTML = billingPeriodText;
+  pricingOutputs.value.yearlyPaymentTextEl.innerHTML = billingPeriodText;
+  
   let totalNumberOfDevices = 0;
   for (let i = 0; i < hardwareTypes.length; ++i) {
 	totalNumberOfDevices += +inputs[hardwareTypes[i]].el.value;
@@ -79,8 +94,8 @@ function handlePricingSlide(inputs, pricingOutputs) {
     input.spanEl.style.left =
       input.el.clientWidth * multiplier - thumbOffset + priceInputOffset + "px";
 	  
-    const businessPrices = computeBusinessPrice(numberOfDevices, hardwareTypes[i], totalNumberOfDevices);
-    const valuePrices = computeValuePrice(numberOfDevices, hardwareTypes[i]);
+    const businessPrices = computeBusinessPrice(numberOfDevices, hardwareTypes[i], totalNumberOfDevices, isYearlyPayment);
+    const valuePrices = computeValuePrice(numberOfDevices, hardwareTypes[i], isYearlyPayment);
 	if (totalNumberOfDevices > 0) {
 	  averageBusinessPrices.pricePerDevice += businessPrices.pricePerDevice * numberOfDevices / totalNumberOfDevices;
 	  averageBusinessPrices.totalPrice += businessPrices.totalPrice;
@@ -91,8 +106,10 @@ function handlePricingSlide(inputs, pricingOutputs) {
   
   pricingOutputs.business.priceEl.innerHTML = Math.round(averageBusinessPrices.pricePerDevice);
   pricingOutputs.value.priceEl.innerHTML = Math.round(averageValuePrices.pricePerDevice);
-  pricingOutputs.business.totalPriceEl.innerHTML = Math.round(averageBusinessPrices.totalPrice) + "€";
-  pricingOutputs.value.totalPriceEl.innerHTML = Math.round(averageValuePrices.totalPrice) + "€";
+  pricingOutputs.business.totalPriceYearlyEl.innerHTML = Math.round(averageBusinessPrices.totalPrice * 12) + "€";
+  pricingOutputs.value.totalPriceYearlyEl.innerHTML = Math.round(averageValuePrices.totalPrice * 12) + "€";
+  pricingOutputs.business.totalPriceMonthlyEl.innerHTML = Math.round(averageBusinessPrices.totalPrice) + "€";
+  pricingOutputs.value.totalPriceMonthlyEl.innerHTML = Math.round(averageValuePrices.totalPrice) + "€";
 
   if (totalNumberOfDevices > valueMaxNumberOfDevices) {
 	pricingOutputs.value.pricingCard.classList.add("is-disabled");
@@ -112,10 +129,10 @@ function handlePricingSlide(inputs, pricingOutputs) {
   }
 }
 
-function computeBusinessPrice(numberOfDevices, type, totalNumberOfDevices) {
+function computeBusinessPrice(numberOfDevices, type, totalNumberOfDevices, isYearlyPayment) {
   const pricePerDevice = computePricePerDeviceBusiness(
-    businessPrices.firstDevice[type],
-	businessPrices.maxDiscountedPrice[type],
+    businessPrices[isYearlyPayment ? 'yearlyPayment' : 'monthlyPayment'].firstDevice[type],
+	businessPrices[isYearlyPayment ? 'yearlyPayment' : 'monthlyPayment'].maxDiscountedPrice[type],
 	businessPrices.minTotalNumberOfDevicesForMaxDiscount,
 	numberOfDevices,
 	type,
@@ -124,6 +141,9 @@ function computeBusinessPrice(numberOfDevices, type, totalNumberOfDevices) {
   return { pricePerDevice: pricePerDevice, totalPrice: numberOfDevices * pricePerDevice };	  
 }
 
-function computeValuePrice(numberOfDevices, type) {
-  return { pricePerDevice: valuePrices[type], totalPrice: numberOfDevices * valuePrices[type] };
+function computeValuePrice(numberOfDevices, type, isYearlyPayment) {
+  return { 
+    pricePerDevice: valuePrices[isYearlyPayment ? 'yearlyPayment' : 'monthlyPayment'][type], 
+	totalPrice: numberOfDevices * valuePrices[isYearlyPayment ? 'yearlyPayment' : 'monthlyPayment'][type] 
+  };
 }
