@@ -133,6 +133,7 @@ function computeBusinessPrice(numberOfDevices, type, totalNumberOfDevices, isYea
   const pricePerDevice = computePricePerDeviceBusiness(
     businessPrices[isYearlyPayment ? 'yearlyPayment' : 'monthlyPayment'].firstDevice[type],
 	businessPrices[isYearlyPayment ? 'yearlyPayment' : 'monthlyPayment'].maxDiscountedPrice[type],
+	businessPrices.maxTotalNumberOfDevicesForNoDiscount,
 	businessPrices.minTotalNumberOfDevicesForMaxDiscount,
 	numberOfDevices,
 	type,

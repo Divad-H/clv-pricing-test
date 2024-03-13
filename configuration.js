@@ -5,11 +5,11 @@ var maxNumberOfDevices = 50;
 var valueMaxNumberOfDevices = 4;
 var valuePrices = {
   monthlyPayment: {
-    smartKitEasy: 79,
-    smartKitFlex: 84,
-    downtimeAnalytics: 104,
+    smartKitEasy: 69,
+    smartKitFlex: 79,
+    downtimeAnalytics: 99,
     paperless: 109,
-    technology: 49
+    technology: 35
   },
   yearlyPayment: {
 	smartKitEasy: 59,
@@ -24,18 +24,18 @@ var valuePrices = {
 var businessPrices = {
   monthlyPayment: {
     firstDevice: {
-      smartKitEasy: 169,
-      smartKitFlex: 174,
-      downtimeAnalytics: 194,
-      paperless: 199,
+      smartKitEasy: 179,
+      smartKitFlex: 184,
+      downtimeAnalytics: 209,
+      paperless: 214,
       technology: 109
     },
     maxDiscountedPrice: {
       smartKitEasy: 139,
-      smartKitFlex: 144,
-      downtimeAnalytics: 164,
-      paperless: 169,
-      technology: 79
+      smartKitFlex: 149,
+      downtimeAnalytics: 169,
+      paperless: 179,
+      technology: 69
     }
   },
   yearlyPayment: {
@@ -54,6 +54,7 @@ var businessPrices = {
       technology: 59
     }
   },
+  maxTotalNumberOfDevicesForNoDiscount: 1,
   minTotalNumberOfDevicesForMaxDiscount: 50
 }
 
@@ -61,6 +62,7 @@ var businessPrices = {
 function computePricePerDeviceBusiness(
   priceForFirstDevice,                   // Preis für Kauf eines einzelnes Devices
   pricePerDeviceWithMaxDiscount,         // Preis pro Device bei maximalem Rabatt
+  maxTotalNumberOfDevicesForNoDiscount,  // Maximale Anzahl Devices bei denen es noch keinen Rabatt gibt
   minTotalNumberOfDevicesForMaxDiscount, // Mindestabnahmemenge für maximalen Rabatt
   numberOfDevices,                       // Anzahl Devices von diesem Hardwaretyp
   type,                                  // Hardwaretyp
@@ -70,10 +72,13 @@ function computePricePerDeviceBusiness(
   if (totalNumberOfDevices >= minTotalNumberOfDevicesForMaxDiscount) {
 	return pricePerDeviceWithMaxDiscount;
   }
+  if (totalNumberOfDevices <= maxTotalNumberOfDevicesForNoDiscount) {
+	return priceForFirstDevice;
+  }
   
   // Linearer Abfall des Preises pro Gerät
   const maxDiscount = priceForFirstDevice - pricePerDeviceWithMaxDiscount;
-  const discountPerDevicePerAdditionalDevice = maxDiscount / (minTotalNumberOfDevicesForMaxDiscount - 1);
-  const pricePerDevice = Math.ceil(priceForFirstDevice - (totalNumberOfDevices - 1) * discountPerDevicePerAdditionalDevice);
+  const discountPerDevicePerAdditionalDevice = maxDiscount / (minTotalNumberOfDevicesForMaxDiscount - maxTotalNumberOfDevicesForNoDiscount);
+  const pricePerDevice = Math.ceil(priceForFirstDevice - (totalNumberOfDevices - maxTotalNumberOfDevicesForNoDiscount) * discountPerDevicePerAdditionalDevice);
   return pricePerDevice;
 }
