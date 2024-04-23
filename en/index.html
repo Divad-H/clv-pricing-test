@@ -1,0 +1,415 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" class="" lang="en" style="scroll-behavior: smooth;">
+  <head>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta charset="utf-8">
+    <meta name="viewport" content="minimum-scale=1.0, width=device-width">
+    <link rel="icon" type="image/svg+xml" href="./assets/favicon.svg">
+    <link rel="icon" type="image/png" href="./assets/favicon.ico">
+    <script type="text/javascript" charset="UTF-8" async="" src="configuration.js"></script>
+    <script type="text/javascript" charset="UTF-8" async="" src="main.js"></script>
+    <script>
+      document.documentElement.classList.remove('no-js');
+    </script>
+    <link href="main.css" rel="stylesheet">
+    <title>Pricing | Clouver</title>
+  </head>
+  <body class=" js-body" style="">
+    <div class="o-container-large">
+	  <h4 class="u-mt-3 u-text-center">
+        HOW MANY DEVICES WOULD YOU LIKE TO CONNECT?
+      </h4>
+	</div>
+    <div class="o-container-small">
+      <div class="u-mt-3">
+        <div class="u-typo-large-bold u-text-center">
+          SmartKit easy (Core + 3 Power Clamps)
+        </div>
+        <div class="c-range js-range u-mt-1" style="--component-slider-thumb-width: 69px;" data-slider-hardware="smartKitEasy">
+          <span class="c-range__value">4</span>
+          <input class="c-range__input" type="range" id="range" name="range" min="0" max="250" value="4" step="1">
+          <div class="c-range__progress-bar" style="background: linear-gradient(to right, var(--token-color-primary), var(--token-color-primary) 0%, var(--token-color-neutral-0) 0%, var(--token-color-neutral-0) 100%);"></div>
+        </div>
+      </div>
+    </div>
+    <div class="o-container-small">
+      <div class="u-mt-3">
+        <div class="u-typo-large-bold u-text-center">
+          SmartKit flex (Core + AIO, without Sensors)
+        </div>
+        <div class="c-range js-range u-mt-1" style="--component-slider-thumb-width: 69px;" data-slider-hardware="smartKitFlex">
+          <span class="c-range__value">0</span>
+          <input class="c-range__input" type="range" id="range" name="range" min="0" max="250" value="0" step="1">
+          <div class="c-range__progress-bar" style="background: linear-gradient(to right, var(--token-color-primary), var(--token-color-primary) 0%, var(--token-color-neutral-0) 0%, var(--token-color-neutral-0) 100%);"></div>
+        </div>
+      </div>
+    </div>
+    <div class="o-container-small">
+      <div class="u-mt-3">
+        <div class="u-typo-large-bold u-text-center">
+          Downtime Analytics 10" (incl. SmartKit easy)
+        </div>
+        <div class="c-range js-range u-mt-1" style="--component-slider-thumb-width: 69px;" data-slider-hardware="downtimeAnalytics">
+          <span class="c-range__value">0</span>
+          <input class="c-range__input" type="range" id="range" name="range" min="0" max="250" value="0" step="1">
+          <div class="c-range__progress-bar" style="background: linear-gradient(to right, var(--token-color-primary), var(--token-color-primary) 0%, var(--token-color-neutral-0) 0%, var(--token-color-neutral-0) 100%);"></div>
+        </div>
+      </div>
+    </div>
+    <div class="o-container-small">
+      <div class="u-mt-3">
+        <div class="u-typo-large-bold u-text-center">
+          Paperless License (incl. Downtime Analytics 10" and SmartKit easy)
+        </div>
+        <div class="c-range js-range u-mt-1" style="--component-slider-thumb-width: 69px;" data-slider-hardware="paperless">
+          <span class="c-range__value">0</span>
+          <input class="c-range__input" type="range" id="range" name="range" min="0" max="250" value="0" step="1">
+          <div class="c-range__progress-bar" style="background: linear-gradient(to right, var(--token-color-primary), var(--token-color-primary) 0%, var(--token-color-neutral-0) 0%, var(--token-color-neutral-0) 100%);"></div>
+        </div>
+      </div>
+    </div>
+    <div class="o-container-small">
+      <div class="u-mt-3">
+        <div class="u-typo-large-bold u-text-center">
+          Connect Your Own Machine
+        </div>
+        <div class="c-range js-range u-mt-1" style="--component-slider-thumb-width: 69px;" data-slider-hardware="technology">
+          <span class="c-range__value">0</span>
+          <input class="c-range__input" type="range" id="range" name="range" min="0" max="250" value="0" step="1">
+          <div class="c-range__progress-bar" style="background: linear-gradient(to right, var(--token-color-primary), var(--token-color-primary) 0%, var(--token-color-neutral-0) 0%, var(--token-color-neutral-0) 100%);"></div>
+        </div>
+      </div>
+    </div>
+	
+    <div class="o-container-small">
+      <div class="u-mt-3 radio-buttons-container">
+        <div class="radio-button u-typo-large-bold">
+          <input class="c-billing-input radio-button__input" type="radio" id="yearly-billing" name="billing" value="yearlyPayment" checked>
+          <label class="radio-button__label" for="yearly-billing"><span class="radio-button__custom"></span>Yearly Payment</label>
+        </div>
+        <div class="radio-button u-typo-large-bold">
+          <input class="c-billing-input radio-button__input" type="radio" id="monthly-billing" name="billing" value="monthlyPayment">
+          <label class="radio-button__label" for="monthly-billing"><span class="radio-button__custom"></span>Monthly Payment</label>
+        </div>
+      </div>
+    </div>
+	
+	<div class="o-section u-py-0">
+      <div class="o-container-large">
+        <div class="o-grid o-cols-12 o-jc-center o-gap-3 js-pricing-plans u-mt-6">
+          <div class="c-pricing-tier o-col-12 o-col-6@>7 is-disabled" data-pricing-type="value" data-price-on-demand="" data-on-demand-label="Price on demand" data-minimum-label="Minimum" data-up-to-label="Up to" data-display-max-items="1" data-display-min-items="1">
+            <div class="c-pricing-tier__header">
+              <div class="c-pricing-tier__price-detail">
+                <span class="c-pricing-tier__price-period">
+                On average
+                </span>
+              </div>
+              <div class="c-pricing-tier__price">
+                <span class="c-pricing-tier__price-number">177</span>€
+              </div>
+              <div class="c-pricing-tier__required">Up to 4 Devices</div>
+              <div class="c-pricing-tier__price-detail">
+                <span class="c-pricing-tier__price-period">
+                Per month and Device
+                </span>
+                <span class="c-pricing-tier__price-period c-yearly-billing">
+                Billed annually
+                </span>
+              </div>
+            </div>
+            <div class="c-pricing-tier__body">
+              <div class="s-wysiwyg">
+                <h4>VALUE</h4>
+                <p></p>
+                <p>Enter into digitalised production with up to <strong>4 Devices</strong></p>
+                <p></p>
+              </div>
+              <div class="c-pricing-tier__price-detail">
+                <h6 class="c-pricing-tier__totalprice c-pricing-monthly">615€</h6>
+                <span class="c-pricing-tier__price-period c-period-caption-total">
+                Per month
+                </span>
+              </div>
+              <div class="c-pricing-tier__price-detail">
+                <h6 class="c-pricing-tier__totalprice c-pricing-yearly">615€</h6>
+                <span class="c-pricing-tier__price-period c-period-caption-total">
+                Per year
+                </span>
+              </div>
+              <ul class="c-checklist c-pricing-tier__checklist u-stack-1">
+                <li class="c-checklist__item">
+                  <div class="c-checklist__icon c-checklist__icon--check">
+                    <span class="c-icon c-checklist__icon-img c-icon--size-3" aria-hidden="true" focusable="false">
+                      <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 16 16" xml:space="preserve">
+                        <path d="M14.284 2.128 5.077 11.08 1.716 7.779c-.176-.136-.456-.136-.596 0l-1.015.987c-.14.136-.14.408 0 .579l4.691 4.527c.176.17.42.17.596 0L15.895 3.66c.14-.137.14-.409 0-.58l-1.015-.952c-.14-.17-.42-.17-.596 0Z"></path>
+                      </svg>
+                    </span>
+                  </div>
+                  <div class="c-checklist__item-text s-wysiwyg">
+                    ProCom Instance
+                  </div>
+                </li>
+                <li class="c-checklist__item">
+                  <div class="c-checklist__icon c-checklist__icon--check">
+                    <span class="c-icon c-checklist__icon-img c-icon--size-3" aria-hidden="true" focusable="false">
+                      <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 16 16" xml:space="preserve">
+                        <path d="M14.284 2.128 5.077 11.08 1.716 7.779c-.176-.136-.456-.136-.596 0l-1.015.987c-.14.136-.14.408 0 .579l4.691 4.527c.176.17.42.17.596 0L15.895 3.66c.14-.137.14-.409 0-.58l-1.015-.952c-.14-.17-.42-.17-.596 0Z"></path>
+                      </svg>
+                    </span>
+                  </div>
+                  <div class="c-checklist__item-text s-wysiwyg">
+                    Multi-Site
+                  </div>
+                </li>
+                <li class="c-checklist__item">
+                  <div class="c-checklist__icon c-checklist__icon--check">
+                    <span class="c-icon c-checklist__icon-img c-icon--size-3" aria-hidden="true" focusable="false">
+                      <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 16 16" xml:space="preserve">
+                        <path d="M14.284 2.128 5.077 11.08 1.716 7.779c-.176-.136-.456-.136-.596 0l-1.015.987c-.14.136-.14.408 0 .579l4.691 4.527c.176.17.42.17.596 0L15.895 3.66c.14-.137.14-.409 0-.58l-1.015-.952c-.14-.17-.42-.17-.596 0Z"></path>
+                      </svg>
+                    </span>
+                  </div>
+                  <div class="c-checklist__item-text s-wysiwyg">
+                    Platform Service
+                  </div>
+                </li>
+                <li class="c-checklist__item">
+                  <div class="c-checklist__icon c-checklist__icon--check">
+                    <span class="c-icon c-checklist__icon-img c-icon--size-3" aria-hidden="true" focusable="false">
+                      <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 16 16" xml:space="preserve">
+                        <path d="M14.284 2.128 5.077 11.08 1.716 7.779c-.176-.136-.456-.136-.596 0l-1.015.987c-.14.136-.14.408 0 .579l4.691 4.527c.176.17.42.17.596 0L15.895 3.66c.14-.137.14-.409 0-.58l-1.015-.952c-.14-.17-.42-.17-.596 0Z"></path>
+                      </svg>
+                    </span>
+                  </div>
+                  <div class="c-checklist__item-text s-wysiwyg">
+                    Hardware Replacement in Case of Defect
+                  </div>
+                </li>
+                <li class="c-checklist__item">
+                  <div class="c-checklist__icon c-checklist__icon--check">
+                    <span class="c-icon c-checklist__icon-img c-icon--size-3" aria-hidden="true" focusable="false">
+                      <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 16 16" xml:space="preserve">
+                        <path d="M14.284 2.128 5.077 11.08 1.716 7.779c-.176-.136-.456-.136-.596 0l-1.015.987c-.14.136-.14.408 0 .579l4.691 4.527c.176.17.42.17.596 0L15.895 3.66c.14-.137.14-.409 0-.58l-1.015-.952c-.14-.17-.42-.17-.596 0Z"></path>
+                      </svg>
+                    </span>
+                  </div>
+                  <div class="c-checklist__item-text s-wysiwyg">
+                    Machine Dashboard
+                  </div>
+                </li>
+                <li class="c-checklist__item">
+                  <div class="c-checklist__icon c-checklist__icon--check">
+                    <span class="c-icon c-checklist__icon-img c-icon--size-3" aria-hidden="true" focusable="false">
+                      <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 16 16" xml:space="preserve">
+                        <path d="M14.284 2.128 5.077 11.08 1.716 7.779c-.176-.136-.456-.136-.596 0l-1.015.987c-.14.136-.14.408 0 .579l4.691 4.527c.176.17.42.17.596 0L15.895 3.66c.14-.137.14-.409 0-.58l-1.015-.952c-.14-.17-.42-.17-.596 0Z"></path>
+                      </svg>
+                    </span>
+                  </div>
+                  <div class="c-checklist__item-text s-wysiwyg">
+                    Comparison of Machines
+                  </div>
+                </li>
+                <li class="c-checklist__item">
+                  <div class="c-checklist__icon c-checklist__icon--check">
+                    <span class="c-icon c-checklist__icon-img c-icon--size-3" aria-hidden="true" focusable="false">
+                      <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 16 16" xml:space="preserve">
+                        <path d="M14.284 2.128 5.077 11.08 1.716 7.779c-.176-.136-.456-.136-.596 0l-1.015.987c-.14.136-.14.408 0 .579l4.691 4.527c.176.17.42.17.596 0L15.895 3.66c.14-.137.14-.409 0-.58l-1.015-.952c-.14-.17-.42-.17-.596 0Z"></path>
+                      </svg>
+                    </span>
+                  </div>
+                  <div class="c-checklist__item-text s-wysiwyg">
+                    Comparison of Production Lines
+                  </div>
+                </li>
+              </ul>
+            </div>
+          </div>
+          <div class="c-pricing-tier o-col-12 o-col-6@>7" data-pricing-type="business" data-price-on-demand="" data-on-demand-label="Price on demand" data-minimum-label="Minimum" data-up-to-label="Up to" data-display-max-items="1" data-display-min-items="1">
+            <!-- <div class="c-pricing-tier__tag"> -->
+              <!-- <div class="c-tag c-tag--tertiary"> -->
+                <!-- Most popular -->
+              <!-- </div> -->
+            <!-- </div> -->
+            <div class="c-pricing-tier__header">
+              <div class="c-pricing-tier__price-detail">
+                <span class="c-pricing-tier__price-period">
+                On average
+                </span>
+              </div>
+              <div class="c-pricing-tier__price">
+                <span class="c-pricing-tier__price-number">615</span>€
+              </div>
+              <div class="c-pricing-tier__required"></div>
+              <div class="c-pricing-tier__price-detail">
+                <span class="c-pricing-tier__price-period">
+                Per month and device
+                </span>
+                <span class="c-pricing-tier__price-period c-yearly-billing">
+                Billed annually
+                </span>
+              </div>
+            </div>
+            <div class="c-pricing-tier__body">
+              <div class="s-wysiwyg">
+                <h4>BUSINESS</h4>
+                <p></p>
+                <p>Monitoring of product lines for effective <strong>bottleneck management</strong></p>
+                <p></p>
+              </div>
+              <div class="c-pricing-tier__price-detail">
+                <h6 class="c-pricing-tier__totalprice c-pricing-monthly">615€</h6>
+                <span class="c-pricing-tier__price-period c-period-caption-total">
+                Per month
+                </span>
+              </div>
+              <div class="c-pricing-tier__price-detail">
+                <h6 class="c-pricing-tier__totalprice c-pricing-yearly">615€</h6>
+                <span class="c-pricing-tier__price-period c-period-caption-total">
+                Per year
+                </span>
+              </div>
+              <ul class="c-checklist c-pricing-tier__checklist u-stack-1">
+                <li class="c-checklist__item">
+                  <div class="c-checklist__icon c-checklist__icon--check">
+                    <span class="c-icon c-checklist__icon-img c-icon--size-3" aria-hidden="true" focusable="false">
+                      <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 16 16" xml:space="preserve">
+                        <path d="M14.284 2.128 5.077 11.08 1.716 7.779c-.176-.136-.456-.136-.596 0l-1.015.987c-.14.136-.14.408 0 .579l4.691 4.527c.176.17.42.17.596 0L15.895 3.66c.14-.137.14-.409 0-.58l-1.015-.952c-.14-.17-.42-.17-.596 0Z"></path>
+                      </svg>
+                    </span>
+                  </div>
+                  <div class="c-checklist__item-text s-wysiwyg">
+                    Own Instance
+                  </div>
+                </li>
+                <li class="c-checklist__item">
+                  <div class="c-checklist__icon c-checklist__icon--check">
+                    <span class="c-icon c-checklist__icon-img c-icon--size-3" aria-hidden="true" focusable="false">
+                      <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 16 16" xml:space="preserve">
+                        <path d="M14.284 2.128 5.077 11.08 1.716 7.779c-.176-.136-.456-.136-.596 0l-1.015.987c-.14.136-.14.408 0 .579l4.691 4.527c.176.17.42.17.596 0L15.895 3.66c.14-.137.14-.409 0-.58l-1.015-.952c-.14-.17-.42-.17-.596 0Z"></path>
+                      </svg>
+                    </span>
+                  </div>
+                  <div class="c-checklist__item-text s-wysiwyg">
+                    Multi-Site
+                  </div>
+                </li>
+                <li class="c-checklist__item">
+                  <div class="c-checklist__icon c-checklist__icon--check">
+                    <span class="c-icon c-checklist__icon-img c-icon--size-3" aria-hidden="true" focusable="false">
+                      <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 16 16" xml:space="preserve">
+                        <path d="M14.284 2.128 5.077 11.08 1.716 7.779c-.176-.136-.456-.136-.596 0l-1.015.987c-.14.136-.14.408 0 .579l4.691 4.527c.176.17.42.17.596 0L15.895 3.66c.14-.137.14-.409 0-.58l-1.015-.952c-.14-.17-.42-.17-.596 0Z"></path>
+                      </svg>
+                    </span>
+                  </div>
+                  <div class="c-checklist__item-text s-wysiwyg">
+                    Platform Service
+                  </div>
+                  <!-- <div class="c-checklist__label"> -->
+                    <!-- NEW -->
+                  <!-- </div> -->
+                </li>
+                <li class="c-checklist__item">
+                  <div class="c-checklist__icon c-checklist__icon--check">
+                    <span class="c-icon c-checklist__icon-img c-icon--size-3" aria-hidden="true" focusable="false">
+                      <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 16 16" xml:space="preserve">
+                        <path d="M14.284 2.128 5.077 11.08 1.716 7.779c-.176-.136-.456-.136-.596 0l-1.015.987c-.14.136-.14.408 0 .579l4.691 4.527c.176.17.42.17.596 0L15.895 3.66c.14-.137.14-.409 0-.58l-1.015-.952c-.14-.17-.42-.17-.596 0Z"></path>
+                      </svg>
+                    </span>
+                  </div>
+                  <div class="c-checklist__item-text s-wysiwyg">
+                    Hardware Replacement in Case of Defect
+                  </div>
+                </li>
+                <li class="c-checklist__item">
+                  <div class="c-checklist__icon c-checklist__icon--check">
+                    <span class="c-icon c-checklist__icon-img c-icon--size-3" aria-hidden="true" focusable="false">
+                      <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 16 16" xml:space="preserve">
+                        <path d="M14.284 2.128 5.077 11.08 1.716 7.779c-.176-.136-.456-.136-.596 0l-1.015.987c-.14.136-.14.408 0 .579l4.691 4.527c.176.17.42.17.596 0L15.895 3.66c.14-.137.14-.409 0-.58l-1.015-.952c-.14-.17-.42-.17-.596 0Z"></path>
+                      </svg>
+                    </span>
+                  </div>
+                  <div class="c-checklist__item-text s-wysiwyg">
+                    Machine Dashboard
+                  </div>
+                </li>
+                <li class="c-checklist__item">
+                  <div class="c-checklist__icon c-checklist__icon--check">
+                    <span class="c-icon c-checklist__icon-img c-icon--size-3" aria-hidden="true" focusable="false">
+                      <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 16 16" xml:space="preserve">
+                        <path d="M14.284 2.128 5.077 11.08 1.716 7.779c-.176-.136-.456-.136-.596 0l-1.015.987c-.14.136-.14.408 0 .579l4.691 4.527c.176.17.42.17.596 0L15.895 3.66c.14-.137.14-.409 0-.58l-1.015-.952c-.14-.17-.42-.17-.596 0Z"></path>
+                      </svg>
+                    </span>
+                  </div>
+                  <div class="c-checklist__item-text s-wysiwyg">
+                    Comparison of Machines
+                  </div>
+                </li>
+                <li class="c-checklist__item">
+                  <div class="c-checklist__icon c-checklist__icon--check">
+                    <span class="c-icon c-checklist__icon-img c-icon--size-3" aria-hidden="true" focusable="false">
+                      <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 16 16" xml:space="preserve">
+                        <path d="M14.284 2.128 5.077 11.08 1.716 7.779c-.176-.136-.456-.136-.596 0l-1.015.987c-.14.136-.14.408 0 .579l4.691 4.527c.176.17.42.17.596 0L15.895 3.66c.14-.137.14-.409 0-.58l-1.015-.952c-.14-.17-.42-.17-.596 0Z"></path>
+                      </svg>
+                    </span>
+                  </div>
+                  <div class="c-checklist__item-text s-wysiwyg">
+                    Comparison of Production Lines and Sites
+                  </div>
+                </li>
+                <li class="c-checklist__item">
+                  <div class="c-checklist__icon c-checklist__icon--check">
+                    <span class="c-icon c-checklist__icon-img c-icon--size-3" aria-hidden="true" focusable="false">
+                      <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 16 16" xml:space="preserve">
+                        <path d="M14.284 2.128 5.077 11.08 1.716 7.779c-.176-.136-.456-.136-.596 0l-1.015.987c-.14.136-.14.408 0 .579l4.691 4.527c.176.17.42.17.596 0L15.895 3.66c.14-.137.14-.409 0-.58l-1.015-.952c-.14-.17-.42-.17-.596 0Z"></path>
+                      </svg>
+                    </span>
+                  </div>
+                  <div class="c-checklist__item-text s-wysiwyg">
+                    OEE App
+                  </div>
+                </li>
+                <li class="c-checklist__item">
+                  <div class="c-checklist__icon c-checklist__icon--check">
+                    <span class="c-icon c-checklist__icon-img c-icon--size-3" aria-hidden="true" focusable="false">
+                      <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 16 16" xml:space="preserve">
+                        <path d="M14.284 2.128 5.077 11.08 1.716 7.779c-.176-.136-.456-.136-.596 0l-1.015.987c-.14.136-.14.408 0 .579l4.691 4.527c.176.17.42.17.596 0L15.895 3.66c.14-.137.14-.409 0-.58l-1.015-.952c-.14-.17-.42-.17-.596 0Z"></path>
+                      </svg>
+                    </span>
+                  </div>
+                  <div class="c-checklist__item-text s-wysiwyg">
+                    MM App
+                  </div>
+                </li>
+                <li class="c-checklist__item">
+                  <div class="c-checklist__icon c-checklist__icon--check">
+                    <span class="c-icon c-checklist__icon-img c-icon--size-3" aria-hidden="true" focusable="false">
+                      <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 16 16" xml:space="preserve">
+                        <path d="M14.284 2.128 5.077 11.08 1.716 7.779c-.176-.136-.456-.136-.596 0l-1.015.987c-.14.136-.14.408 0 .579l4.691 4.527c.176.17.42.17.596 0L15.895 3.66c.14-.137.14-.409 0-.58l-1.015-.952c-.14-.17-.42-.17-.596 0Z"></path>
+                      </svg>
+                    </span>
+                  </div>
+                  <div class="c-checklist__item-text s-wysiwyg">
+                    Own Access Rights Management
+                  </div>
+                </li>
+                <li class="c-checklist__item">
+                  <div class="c-checklist__icon c-checklist__icon--check">
+                    <span class="c-icon c-checklist__icon-img c-icon--size-3" aria-hidden="true" focusable="false">
+                      <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 16 16" xml:space="preserve">
+                        <path d="M14.284 2.128 5.077 11.08 1.716 7.779c-.176-.136-.456-.136-.596 0l-1.015.987c-.14.136-.14.408 0 .579l4.691 4.527c.176.17.42.17.596 0L15.895 3.66c.14-.137.14-.409 0-.58l-1.015-.952c-.14-.17-.42-.17-.596 0Z"></path>
+                      </svg>
+                    </span>
+                  </div>
+                  <div class="c-checklist__item-text s-wysiwyg">
+                    Own Machine Management
+                  </div>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </body>
+</html>
